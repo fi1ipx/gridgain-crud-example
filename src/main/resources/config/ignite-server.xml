@@ -17,9 +17,7 @@
                         <property name="addresses">
                             <list>
                                 <!-- Server node. -->
-                                <value>gg-server-node1:47500</value>
-                                <!-- Client node. -->
-                                <value>gg-client-node1:47500</value>
+                                <value>gg-server-node2:47500</value>
                             </list>
                         </property>
                     </bean>
@@ -47,21 +45,5 @@
         <property name="metricsLogFrequency" value="3000000"/>
 
         <property name="peerClassLoadingEnabled" value="true"/>
-        <!--    <property name="igniteInstanceName" value="ServerNodeNLP"/> -->
-
-        <property name="includeEventTypes">
-            <list>
-                <util:constant static-field="org.gridgain.grid.events.EventType.EVT_AUTHENTICATION_SUCCEEDED"/>
-                <util:constant static-field="org.gridgain.grid.events.EventType.EVT_AUTHENTICATION_FAILED"/>
-                <util:constant static-field="org.gridgain.grid.events.EventType.EVT_AUTHORIZATION_SUCCEEDED"/>
-                <util:constant static-field="org.gridgain.grid.events.EventType.EVT_AUTHORIZATION_FAILED"/>
-                <util:constant static-field="org.apache.ignite.events.EventType.EVT_NODE_JOINED"/>
-                <util:constant static-field="org.apache.ignite.events.EventType.EVT_NODE_LEFT"/>
-                <util:constant static-field="org.apache.ignite.events.EventType.EVT_NODE_FAILED"/>
-                <util:constant static-field="org.apache.ignite.events.EventType.EVT_CACHE_STARTED"/>
-                <util:constant static-field="org.apache.ignite.events.EventType.EVT_CACHE_STOPPED"/>
-            </list>
-        </property>
-
     </bean>
 </beans>

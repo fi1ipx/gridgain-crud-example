@@ -16,8 +16,7 @@
                             <list>
                                 <!-- Server node. -->
                                 <value>gg-server-node1:47500</value>
-                                <!-- Client node. -->
-                                <value>gg-client-node1:47500</value>
+                                <value>gg-server-node2:47500</value>
                             </list>
                         </property>
                     </bean>
