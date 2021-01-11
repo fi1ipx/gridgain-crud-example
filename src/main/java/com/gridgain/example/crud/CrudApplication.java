@@ -17,9 +17,7 @@ public class CrudApplication {
 	public Ignite ignite() {
 		System.setProperty("IGNITE_QUIET","false");
 
-		Ignition.setClientMode(true);
-
-		return Ignition.start("config/ignite.xml");
+		return Ignition.start(System.getProperty("IGNITE_CONFIG_URL"));
 	}
 
 }
