@@ -17,6 +17,10 @@ public class CrudApplication {
 	public Ignite ignite() {
 		System.setProperty("IGNITE_QUIET","false");
 
+		if (System.getProperty("IGNITE_CONFIG_URL") == null || System.getProperty("IGNITE_CONFIG_URL").isEmpty()) {
+			System.setProperty("IGNITE_CONFIG_URL", System.getenv("IGNITE_CONFIG_URL"));
+		}
+
 		return Ignition.start(System.getProperty("IGNITE_CONFIG_URL"));
 	}
 
