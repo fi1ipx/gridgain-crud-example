@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gg-crud-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gg-crud
+  template:
+    metadata:
+      labels:
+        app: gg-crud
+    spec:
+      containers:
+      - name: gg-crud-java
+        image: "fi1ipx/gridgain-crud-example:latest"
+        env:
+          - name: IGNITE_CONFIG_URL
+            value: "https://raw.githubusercontent.com/fi1ipx/gridgain-crud-example/master/config/ignite-client.xml"
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gg-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gridgain
+  template:
+    metadata:
+      labels:
+        app: gridgain
+    spec:
+      containers:
+      - name: gridgain
+        image: "gridgain/ultimate:8.7.31"
+        env:
+          - name: CONFIG_URI
+            value: "https://raw.githubusercontent.com/fi1ipx/gridgain-crud-example/master/config/ignite-server.xml"
+        ports:
+        - containerPort: 10800
+#        volumeMounts:
+#        - mountPath: /opt/gridgain/work
+#          name: story-volume
+      volumes:
+        - name: story-volume
+          persistentVolumeClaim:
+            claimName: host-pvc-gg
+
